@@ -1,0 +1,14 @@
+{% load i18n %}
+{% if cashier_number %}
+    <div id="message" hx-swap-oob="true">
+        <p style="font-size: 7rem !important;">
+            {% translate "cashier_number" %} {{ cashier_number }}
+        </p>
+    </div>
+{% else %}
+    <div id="message" hx-swap-oob="true">
+        <p style="font-size: 7rem !important;">
+            {% translate "wait_please" %}
+        </p>
+    </div>
+{% endif %}
