@@ -19,7 +19,7 @@ The key here is to understand the interactions between the views and the consume
    using the channel layer (redis powered) to update the displayed cashier number.
 
 ```json
-  {"type": "cashier.message", "num_cashier": num_cashier, language": language})
+  {"type": "cashier.message", "num_cashier": num_cashier, "language": language})
  ```
 
 3. Django returns an HTTP 204 response (No Content) to indicate that the request was
