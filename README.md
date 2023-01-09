@@ -10,7 +10,7 @@ the screen alternate between 2 states : "Please Wait" and "Cashier Nºx".
 The /cashier_buttons view simulate the physical buttons which is pressed to change the
 screen state, you can also change language.
 
-The key here is to understand the interactions between the views and the consumer:
+The key here is to understand the interactions between the views and the CashierConsumer:
 
 1. The browser sends a POST request to the *demo_cashier_action* view, including the
    cashier parameter and the value of the selected language.
@@ -19,7 +19,7 @@ The key here is to understand the interactions between the views and the consume
    using the channel layer (redis powered) to update the displayed cashier number.
 
 ```json
-  {"type": "cashier.message", "num_cashier": num_cashier, "language": language})
+  {"type": "cashier.message", "num_cashier": num_cashier, "language": language}
  ```
 
 3. Django returns an HTTP 204 response (No Content) to indicate that the request was
@@ -44,4 +44,5 @@ Django : https://channels.readthedocs.io/en/stable/index.html
 If you want to run this app you must have Redis installed somewhere, defaults settings for redis in this demo are localhost/6379
 
 Main screen is at : http://127.0.0.1:8000/
+
 Buttons are at : http://127.0.0.1:8000/cashier_buttons
