@@ -18,7 +18,7 @@ The key here is to understand the interactions between the views and the Cashier
 2. Django processes the POST request and sends a message to the CashierConsumer
    using the channel layer (redis powered) to update the displayed cashier number.
 
-```json
+```
   {"type": "cashier.message", "num_cashier": num_cashier, "language": language}
  ```
 
